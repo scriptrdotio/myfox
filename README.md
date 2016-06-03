@@ -67,7 +67,7 @@ that it stores in your scriptr.io's global storage. The tokens are also returned
 
 In order to use the connector, you need to import the main module: ```myfox/fox```, as described below:
 ```
-var foxModule = require("myfox/fox");
+var foxModule = require("/modules/myfox/fox");
 ```
 Then create a new instance of the Fox class, defined in this module (we assume that we already otbained an access token for the given user):
 There are two ways to do this: (1) using the end user's OAuth token or (2) using the end user's id (the one used in your app)
@@ -115,7 +115,7 @@ or an instance of the FoxClient class, in addition to the site id and the device
 preferable to always use the factory methods of the Fox class. 
 ```
 // example
-var gateModule = require("myfox/gate");
+var gateModule = require("/modules/myfox/gate");
 var dto = {
 	siteId: "12345",
 	id: "234",

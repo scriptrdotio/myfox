@@ -4,8 +4,8 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var foxModule = require("../fox");
-var mappings = require("../mappings");
+ var foxModule = require("../fox.js");
+var mappings = require("../mappings.js");
 
 try {
   var myfox = new foxModule.Fox({token:"349227e312479c7f26ced9324f6e152e212ad8af"});

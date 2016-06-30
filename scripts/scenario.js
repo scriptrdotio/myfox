@@ -4,7 +4,7 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var config = require("./oauth2/config");
+ var config = require("./oauth2/config.js");
 
 var endpoint = config.apiUrl + "/" +  config.apiVer + "/site/$siteId/scenario/items";
 

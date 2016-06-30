@@ -4,9 +4,9 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var deviceModule = require("./device");
-var config = require("./oauth2/config");
-var mappings = require("./mappings");
+ var deviceModule = require("./device.js");
+var config = require("./oauth2/config.js");
+var mappings = require("./mappings.js");
 
 var endpoint = config.apiUrl + "/" +  config.apiVer + "/site/$siteId/device/gate/items";
 

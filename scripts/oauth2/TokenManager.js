@@ -13,8 +13,8 @@ execute=authenticated
  * @module TokenManager
  */
 
-var config = require("./config");
-var util = require("./util");
+var config = require("./config.js");
+var util = require("./util.js");
 var http = require("http");
 
 /** 

@@ -4,18 +4,18 @@ write=nobody
 execute=authenticated 
   **/ 
  
- var config = require("./oauth2/config");
-var clientModule = require("./foxClient");
-var mappings = require("./mappings");
-var gate = require("./gate");
-var heater = require("./heater");
-var shutter = require("./shutter");
-var shutterGroup = require("./shutterGroup");
-var socket = require("./socket");
-var camera = require("./camera");
-var foxModule = require("./foxModule");
-var light = require("./light");
-var scenario = require("./scenario");
+ var config = require("./oauth2/config.js");
+var clientModule = require("./foxClient.js");
+var mappings = require("./mappings.js");
+var gate = require("./gate.js");
+var heater = require("./heater.js");
+var shutter = require("./shutter.js");
+var shutterGroup = require("./shutterGroup.js");
+var socket = require("./socket.js");
+var camera = require("./camera.js");
+var foxModule = require("./foxModule.js");
+var light = require("./light.js");
+var scenario = require("./scenario.js");
 
 /**
  * Create instances of this class to interact with your myfox deployment and devices.
@@ -509,7 +509,7 @@ Fox.prototype.setSecurity = function(dto) {
  */
 Fox.prototype._getTokenFromUserId = function(userId) {
   
-  var tokenManager = require("./oauth2/TokenManager");
+  var tokenManager = require("./oauth2/TokenManager.js");
   return tokenManager.getPersistedTokens(userId);
 };
 

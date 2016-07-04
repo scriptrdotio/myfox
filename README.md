@@ -76,7 +76,7 @@ var myfox = new foxModule.Fox({token:"448963650354110060232763db2d36beb983c6ad"}
 ```
 Or
 ```
-var myfox = new foxModule.Fox({username:"galileo"}); // option 2
+var myfox = new foxModule.Fox({userId:"galileo"}); // option 2
 ```
 #### Listing all available devices 
 The Fox class provides many methods to obtain data related to the devices owned by a myfox user:

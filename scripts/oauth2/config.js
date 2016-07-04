@@ -14,10 +14,10 @@ var apiUrl = "https://api.iotcompany.com/api"; // example
 var apiVer = "1";
 
 // OAuth 2.0: Authorization URI - step1 of OAuth process
-var authorizationUrl = "https://api.iotcompany.com//OAuth/"; // example
+var authorizationUrl = "https://api.myfox.me/oauth2/authorize"; // example
 
 // OAuth 2.0: Authorization URI - step2 of OAuth process (if response_type is "code" usually)
-var accessTokenUrl = "https://api.iotcompany.com//OAuth/"; // example
+var accessTokenUrl = "https://api.myfox.me/oauth2/token"; // example
 
 // OAuth 2.0 Client ID
 var client_id = "atfchfp97j2whpg6cvfgwt67h"; // example
@@ -42,7 +42,7 @@ var redirect_uri = "https://api.scriptr.io/oauth2/getAccessToken.js?auth_token=Y
 // to add them to the redirectUrl. Notably we need to send the "state" in order to match the
 // access token to a user. Set the below to "true" if you need the "state" to be added to the 
 // query string of the callback URL
-var addStateToRedirectUrl = true;
+var addStateToRedirectUrl = false;
 
 //optional. Chec your target API for values (e.g. "offline)
 var access_type="";

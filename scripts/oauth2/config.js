@@ -36,7 +36,7 @@ var scope = "";
 
 // Where the 3rd party app should send the user after the user grants or denies consent. 
 // Optional if you have only specified one callback URI for your application in the settings on
-var redirect_uri = "https://api.scriptr.io/oauth2/getAccessToken?auth_token=YOUR_SCRIPTR.IO_AUTH_TOKEN_OR_ANONYMOUS_TOKEN";
+var redirect_uri = "https://api.scriptr.io/oauth2/getAccessToken.js?auth_token=YOUR_SCRIPTR.IO_AUTH_TOKEN_OR_ANONYMOUS_TOKEN";
 
 // Some OAuth API do not redirect the parameters you send to the authorization URL so you have
 // to add them to the redirectUrl. Notably we need to send the "state" in order to match the

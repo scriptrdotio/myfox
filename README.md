@@ -7,19 +7,19 @@ Myfox device's data and services are exposed to developers as REST APIs.
 The connector simplifies how scriptr.io's developers can leverage myfox's APIs from within their scripts, by providing
 JavaScript objects that act as wrappers on top of the APIs. 
 ## Components
-- myfox/fox: this is the main object to interact with. It provides an entry point to the creation of all the other objects.
-- myfox/device: the base class of all the objects that wrap actual myfox devices
-- myfox/cameras: allows you to manipulate myfox smart cameras 
-- myfox/foxModule: allows you to interact with myfox modules 
-- myfox/gate: allows you to manipulate myfox gate controllers
-- myfox/heater: allows you to interact with myfox thermostats coupled with heaters
-- myfox/foxClient: generic http client that handles the communication between scriptr.io and myfox
-- myfox/light: wraps myfox light sensors
-- myfox/shutter: allows you to interact with shutters
-- myfox/shutterGroup: interact with groups of shutters defined using myfox control app
-- myfox/socket: allows you to interact with sockets
-- myfox/scenario: allows you to enable, play or disable predefined usage scenarios
-- myfox/test/tests: a list of all the objects and corresponding methods, for examples on how to use them.
+- myfox/fox.js: this is the main object to interact with. It provides an entry point to the creation of all the other objects.
+- myfox/device.js: the base class of all the objects that wrap actual myfox devices
+- myfox/cameras.js: allows you to manipulate myfox smart cameras 
+- myfox/foxModule.js: allows you to interact with myfox modules 
+- myfox/gate.js: allows you to manipulate myfox gate controllers
+- myfox/heater.js: allows you to interact with myfox thermostats coupled with heaters
+- myfox/foxClient.js: generic http client that handles the communication between scriptr.io and myfox
+- myfox/light.js: wraps myfox light sensors
+- myfox/shutter.js: allows you to interact with shutters
+- myfox/shutterGroup.js: interact with groups of shutters defined using myfox control app
+- myfox/socket.js: allows you to interact with sockets
+- myfox/scenario.js: allows you to enable, play or disable predefined usage scenarios
+- myfox/test/tests.js: a list of all the objects and corresponding methods, for examples on how to use them.
 
 ## How to use
 - Deploy the aforementioned scripts in your scriptr account, in a folder named "myfox"
@@ -27,14 +27,14 @@ JavaScript objects that act as wrappers on top of the APIs.
 - Create an end user (https://www.getmyfox.com/fr/customer/account/create/) 
 - From your developer account, make sure to copy/paste the values of your Client (Consumer) Key, OAuth 2.0 Client ID and Client (Consumer) Secret in the corresponding
 variables of the "oauth2/config file" (respectively client_id and client_secret).
-- In the "oauth2/config" file, make sure that the value of the "response_type" variable is set to "code"
-- In the "oauth2/config" file, make sure to set the value of the "authorizationUrl" to the correct myfox endpoint (https://api.myfox.me/oauth2/authorize)
-- In the "oauth2/config" file, make sure to set the value of the "accessTokenUrl" to the correct myfox endpoint (https://api.myfox.me/oauth2/token)
-- In the "oauth2/config" file, make sure to set the value of the "app" variable to a name you choose (e.g. "myfox")
-- In the "oauth2/config" file, make sure to set the value of the "apiUrl" variable to "https://api.myfox.me"
-- In the "oauth2/config" file, make sure to set the value of the "apiVer" variable to "v2"
-- In the "oauth2/config" file, make sure to set the value of the "grantType" variable to "authorization_code"
-- In the "oauth2/config" file, replace the generci part at the end of the "redirect_uri" variable with your scriptr.io authentication token
+- In the "oauth2/config.js" file, make sure that the value of the "response_type" variable is set to "code"
+- In the "oauth2/config.js" file, make sure to set the value of the "authorizationUrl" to the correct myfox endpoint (https://api.myfox.me/oauth2/authorize)
+- In the "oauth2/config.js" file, make sure to set the value of the "accessTokenUrl" to the correct myfox endpoint (https://api.myfox.me/oauth2/token.js)
+- In the "oauth2/config.js" file, make sure to set the value of the "app" variable to a name you choose (e.g. "myfox")
+- In the "oauth2/config.js" file, make sure to set the value of the "apiUrl" variable to "https://api.myfox.me"
+- In the "oauth2/config.js" file, make sure to set the value of the "apiVer" variable to "v2"
+- In the "oauth2/config.js" file, make sure to set the value of the "grantType" variable to "authorization_code"
+- In the "oauth2/config.js" file, replace the generci part at the end of the "redirect_uri" variable with your scriptr.io authentication token
 - In the "oauth2/config" file, set the value of the "addStateToRedirectUrl" variable to false 
 - Create a test script in scriptr, or use the script provided in myfox/test/. 
 
@@ -46,14 +46,14 @@ The username can be the actual end user's myfox username or another username he 
 The result returned by the aforementioned script should resemble the following:
 
 ```
->> curl -X POST  -F username=galileo -F apsws.time=1434722158021 -H 'Authorization: bearer <YOUR_AUTH_TOKEN>' 'https://api.scriptr.io/oauth2/getRequestCodeUrl'
+>> curl -X POST  -F username=galileo -F apsws.time=1434722158021 -H 'Authorization: bearer <YOUR_AUTH_TOKEN>' 'https://api.scriptr.io/oauth2/getRequestCodeUrl.js'
 {
 	"metadata": {
 		"requestId": "45753a7f-a2b6-4378-a8e1-3bbddced9694",
 		"status": "success",
 		"statusCode": "200"
 	}, // the below is an example
-	"result": "https://api.myfox.me/oauth2/authorize?client_id=812d9375d3867gc88k82449bf368b06b&response_type=code&state=5d9dc0&redirect_uri=https%3A%2F%2Fapi.scriptr.io%2Foauth2%2FgetAccessToken%3Fauth_token%3DRYOUR_TOKEN"
+	"result": "https://api.myfox.me/oauth2/authorize.js?client_id=812d9375d3867gc88k82449bf368b06b&response_type=code&state=5d9dc0&redirect_uri=https%3A%2F%2Fapi.scriptr.io%2Foauth2%2FgetAccessToken%3Fauth_token%3DRYOUR_TOKEN"
 }
 ```
 #### Step 2
